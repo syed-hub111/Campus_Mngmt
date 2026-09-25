@@ -1,20 +1,40 @@
 package com.campus.app;
-import com.campus.model.student;
-import com.campus.service.studentservice;
+import com.campus.model.*;
+import com.campus.service.*;
+import java.util.Scanner;
 
 public class Main {
-    
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
+        // get student details from user input 
+        System.out.println("Enter student details:");
+        System.out.println("Student ID: ");
+        int studentid = sc.nextInt();
+        System.out.println("Student Name: ");
+        String studname = sc.next();
+        System.out.println("Student Age: ");
+        int age = sc.nextInt();
+        System.out.println("Student Department: ");
+        String department = sc.next();
+        System.out.println("Enter number of subjetcs:c ");
+        int n=sc.nextInt();
+        int[] marks = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter mark for subject " + (i + 1) + ":");
+            marks[i] = sc.nextInt();
+        }
         // Create a student object
-        int[] marks = {85, 90, 78, 92, 88};
-        student student1 = new student(1, "John Doe", 20, "Computer Science", marks);
+        Student student1 = new Student(studentid, studname, age, department, marks);
+
+        
         //display student details
         System.out.println("Student ID: " + student1.getstudentid());
         System.out.println("Student Name: " + student1.getStudentname());
         System.out.println("Student Age: " + student1.getage());
         System.out.println("Student Department: " + student1.getdepartment()); 
         // Create a studentservice object
-        studentservice service = new studentservice();
+        Studentservice service = new Studentservice();
 
         // Calculate total marks
         int totalMarks = service.calculatetotal(student1);

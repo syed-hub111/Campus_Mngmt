@@ -1,9 +1,9 @@
 package com.campus.service;
 
-import com.campus.model.student;
+import com.campus.model.Student;
 
-public class studentservice {
-public int calculatetotal(student student){
+public class Studentservice {
+public int calculatetotal(Student student){
     if (student.getmarks()==null){
         return 0;
     }
@@ -13,7 +13,7 @@ public int calculatetotal(student student){
     }
     return total;
 }
-public double calculateaverage(student student){
+public double calculateaverage(Student student){
     if (student.getmarks()==null || student.getmarks().length==0){
         return 0.0;
     }
@@ -22,7 +22,7 @@ public double calculateaverage(student student){
 }
 
 //find maximum mark
-public int findmaximum(student student){
+public int findmaximum(Student student){
     if (student.getmarks()==null || student.getmarks().length==0){
         return 0;
     }
@@ -37,7 +37,7 @@ public int findmaximum(student student){
     }
 
     //minimum mark
-    public int findminimum(student student){
+    public int findminimum(Student student){
         if (student.getmarks()==null || student.getmarks().length==0){
             return 0;
         }
@@ -52,7 +52,7 @@ public int findmaximum(student student){
 
     //grade based on marks
 
-    public String grade(student student){
+    public String grade(Student student){
 
         int[] marks= student.getmarks();
         if(marks == null || marks.length==0){

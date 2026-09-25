@@ -1,6 +1,6 @@
 package com.campus.model;
 
-public class student {
+public class Student {
     //encapsulation. data hiding.instance variable
     private int studentid;
     private String studname;
@@ -15,14 +15,14 @@ public class student {
 
     //deefault constructor 
 
-    public student(){
+    public Student(){
         studentcount++;
 
     }
 
     //parameterized constructor
 
-    public student(int studentid,String studname,int age,String department,int[] marks){
+    public Student(int studentid,String studname,int age,String department,int[] marks){
         this.studentid=studentid;
         this.studname=studname;
         this.age=age;
